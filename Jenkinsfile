@@ -8,6 +8,7 @@ pipeline {
                     agent {
                         docker {
                             image 'devtwist/jenkins-py:3.11'
+                            label 'docker-python-agent'
                             args '-u root --memory=512m --cpus=1 -v /var/run/docker.sock:/var/run/docker.sock'
                         }
                     }
@@ -21,6 +22,7 @@ pipeline {
                     agent {
                         docker {
                             image 'devtwist/jenkins-node:20'
+                            label 'docker-node-agent'
                             args '-u root --memory=512m --cpus=1 -v /var/run/docker.sock:/var/run/docker.sock'
                         }
                     }
