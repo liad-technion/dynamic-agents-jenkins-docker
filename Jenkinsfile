@@ -7,9 +7,9 @@ pipeline {
                 stage('Build (Python)') {
                     agent {
                         docker {
-                            image 'python-java:3.11-slim@sha256:dd3cac69b6b968343ba7883b37d212f23ad7dec87f27fef9436cb0b123d4b964'
+                            image 'devtwist/jenkins-py:3.11'
                             label 'docker-agent-python'
-                            args  '-u root --memory=512m --cpus=1'
+                            args '-u root --memory=512m --cpus=1 -v /var/run/docker.sock:/var/run/docker.sock'
                         }
                     }
                     steps {
@@ -21,9 +21,9 @@ pipeline {
                 stage('Tools (Node)') {
                     agent {
                         docker {
-                            image 'node-java:20-slim@sha256:d3fa6b57ce61c94302827c57dfcd439745596a8e15b9c88cb9bb0b7ea25a5408'
+                            image 'devtwist/jenkins-node:20'
                             label 'docker-agent-node'
-                            args  '-u root --memory=512m --cpus=1'
+                            args '-u root --memory=512m --cpus=1 -v /var/run/docker.sock:/var/run/docker.sock'
                         }
                     }
                     steps {
