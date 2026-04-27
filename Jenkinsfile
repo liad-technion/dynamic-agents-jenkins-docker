@@ -7,7 +7,7 @@ pipeline {
                 stage('Build (Python)') {
                     agent {
                         docker {
-                            image 'python-java:3.11-slim@sha256:9314202733ad6509beb5793094fa22beed6d333c8c92d9b7de0d664231a2af95'
+                            image 'python-java:3.11-slim@sha256:dd3cac69b6b968343ba7883b37d212f23ad7dec87f27fef9436cb0b123d4b964'
                             label 'docker-agent-python'
                             args  '-u root --memory=512m --cpus=1'
                         }
@@ -21,7 +21,7 @@ pipeline {
                 stage('Tools (Node)') {
                     agent {
                         docker {
-                            image 'node-java:20-slim@sha256:306016f4ed677cf741df197f382f80cc659a77e5efa0eff91bee00dddf87df85'
+                            image 'node-java:20-slim@sha256:d3fa6b57ce61c94302827c57dfcd439745596a8e15b9c88cb9bb0b7ea25a5408'
                             label 'docker-agent-node'
                             args  '-u root --memory=512m --cpus=1'
                         }
