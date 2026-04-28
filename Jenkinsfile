@@ -5,12 +5,12 @@ pipeline {
         stage('Parallel dynamic agents') {
             parallel {
                 stage('Build (Python)') {
-                    agent {
-                        docker {
-                            image 'devtwist/jenkins-py:3.11'
-                            label 'docker-python-agent'
-                            args '-u root --memory=512m --cpus=1 -v /var/run/docker.sock:/var/run/docker.sock'
-                        }
+                    agent { label 'docker-python-agent' }
+                        //docker {
+                        //    image 'devtwist/jenkins-py:3.11'
+                        //    label 'docker-python-agent'
+                        //    args '-u root --memory=512m --cpus=1 -v /var/run/docker.sock:/var/run/docker.sock'
+                        //}
                     }
                     steps {
                         sh 'hostname'
@@ -19,12 +19,12 @@ pipeline {
                     }
                 }
                 stage('Tools (Node)') {
-                    agent {
-                        docker {
-                            image 'devtwist/jenkins-node:20'
-                            label 'docker-node-agent'
-                            args '-u root --memory=512m --cpus=1 -v /var/run/docker.sock:/var/run/docker.sock'
-                        }
+                    agent { label 'docker-node-agent' }
+                        //docker {
+                        //    image 'devtwist/jenkins-node:20'
+                        //    label 'docker-node-agent'
+                        //    args '-u root --memory=512m --cpus=1 -v /var/run/docker.sock:/var/run/docker.sock'
+                        //}
                     }
                     steps {
                         sh 'hostname'
