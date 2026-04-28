@@ -11,7 +11,6 @@ pipeline {
                         //    label 'docker-python-agent'
                         //    args '-u root --memory=512m --cpus=1 -v /var/run/docker.sock:/var/run/docker.sock'
                         //}
-                    }
                     steps {
                         sh 'hostname'
                         sh 'python3 --version'
@@ -25,7 +24,6 @@ pipeline {
                         //    label 'docker-node-agent'
                         //    args '-u root --memory=512m --cpus=1 -v /var/run/docker.sock:/var/run/docker.sock'
                         //}
-                    }
                     steps {
                         sh 'hostname'
                         sh 'node --version'
