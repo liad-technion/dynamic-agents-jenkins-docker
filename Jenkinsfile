@@ -15,6 +15,7 @@ pipeline {
                         sh 'hostname'
                         sh 'python3 --version'
                         sh 'pip install --quiet pytest && pytest --version'
+                        echo "Build stage completed on Python agent."
                     }
                 }
                 stage('Tools (Node)') {
